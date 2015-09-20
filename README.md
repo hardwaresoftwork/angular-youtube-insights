@@ -15,7 +15,7 @@ Just add the service as dependency to your controller and make a call.
 You need to obtain an API-key before.
 
 ```javascript
-SourSound.getYoutubeChannelStats('androidpit')
+ngYTInsights.getYoutubeChannelStats('androidpit')
 .then(
   function( response ) {
     $scope.uservalue = response;
