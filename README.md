@@ -1,29 +1,21 @@
-# SourInsights #
+# angular-pagespeed-insights
+AngularJS 1.x service for Google Youtube API
 
-### AngularJS module for different Analysis ###
+#### Youtube API Docs ####
 
-
-#### Features ####
-##### APIs #####
-
-* Google Pagespeed Insights
-* Youtube Data v3
-* Facebook (planned)  
-* Google+
+* https://www.youtube.com/yt/dev/en/api-resources.html
 
 ##### Service Methods #####
 
-* getSiteInsights
-* getDesktopSiteInsights
-* getMobileSiteInsights
 * getYoutubeChannelStats
 
 #### Example ####
 
 Just add the service as dependency to your controller and make a call.
+You need to obtain an API-key before.
 
 ```javascript
-SourSound.getYoutubeChannelStats('androidpit')
+ngYTInsights.getYoutubeChannelStats('androidpit')
 .then(
   function( response ) {
     $scope.uservalue = response;
@@ -33,4 +25,4 @@ SourSound.getYoutubeChannelStats('androidpit')
 
 #### Demo ####
 
-* http://insights.bnz-power.com
+* http://hello.bnz-power.com/angular-youtube-insights
