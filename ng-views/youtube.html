@@ -17,7 +17,7 @@
 </thead>
 <tbody>
 <tr ng-repeat="result in results">
-<td>{{result.ytinsights.items[0].snippet.title}}</td>
+<td>{{result.ytinsights.items[0].snippet.title}} | <a ng-href="#/playlists/{{result.ytinsights.items[0].id}}">Playlists</a></td>
 <td>{{result.ytinsights.items[0].statistics.subscriberCount}}</td>
 <td>{{result.ytinsights.items[0].statistics.viewCount}}</td>
 <td>{{result.ytinsights.items[0].statistics.videoCount}}</td>

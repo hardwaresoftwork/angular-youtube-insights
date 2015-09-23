@@ -72,7 +72,7 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
   var sitelength = $scope.sites.length;
 
   for (var i = 0; i < sitelength; i++) {
-    ngYTInsights.getYoutubeChannelStats($scope.sites[i].channel)
+    ngYTInsights.getChannelStats($scope.sites[i].channel)
     .then(
       function( response ) {
         $scope.temp = response;
@@ -123,7 +123,7 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
   var sitelength = $scope.sites.length;
 
   for (var i = 0; i < sitelength; i++) {
-    ngYTInsights.getYoutubeChannelStats($scope.sites[i].channel)
+    ngYTInsights.getChannelStats($scope.sites[i].channel)
     .then(
       function( response ) {
         $scope.temp = response;
@@ -136,5 +136,52 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
 
 
 }]);
+
+
+Controllers.controller('PlaylistsCtrl', ['$scope', '$routeParams', 'ngYTInsights', '$location', 'project',
+function($scope, $routeParams, ngYTInsights, $location, project) {
+
+  $scope.project = { title: project.title };
+  $scope.channelid = $routeParams.playlistid;
+//$scope.results = [];
+
+  ngYTInsights.getChannelPlaylists($scope.channelid)
+    .then(
+      function( response ) {
+        console.log(response);
+        $scope.results = response;
+
+      /*  $scope.results.push({
+          ytinsights : $scope.temp
+        });*/
+      }
+    );
+
+
+}]);
+
+Controllers.controller('PlaylistsItemsCtrl', ['$scope', '$routeParams', 'ngYTInsights', '$location', 'project',
+function($scope, $routeParams, ngYTInsights, $location, project) {
+
+  $scope.project = { title: project.title };
+  $scope.channelid = $routeParams.playlistid;
+//$scope.results = [];
+
+  ngYTInsights.getPlaylistItems($scope.channelid)
+    .then(
+      function( response ) {
+        console.log(response);
+        $scope.results = response;
+
+      /*  $scope.results.push({
+          ytinsights : $scope.temp
+        });*/
+      }
+    );
+
+
+}]);
+
+
 
 })();
