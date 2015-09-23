@@ -10,18 +10,22 @@
 <tr>
 <th>THUMB</th>
 <th>TITLE</th>
-<th>DESCRIPTION</th>
+<th>LIKES / DISLIKES</th>
+<th>FAVS</th>
+<th>COMMENTS</th>
+<th>VIEWS</th>
 <th>PUBLISHED AT</th>
-<th>VIDEO-ID</th>
 </tr>
 </thead>
 <tbody>
 <tr ng-repeat="result in results.items">
-<td><a ng-href="#/video/{{result.snippet.resourceId.videoId}}"><img src="{{result.snippet.thumbnails.default.url}}" \></a></td>
+<td><img src="{{result.snippet.thumbnails.default.url}}" \></td>
 <td>{{result.snippet.title}}</td>
-<td>{{result.snippet.description}}</td>
+<td>{{result.statistics.likeCount}} / {{result.statistics.dislikeCount}}</td>
+<td>{{result.statistics.favoriteCount}}</td>
+<td>{{result.statistics.commentCount}}</td>
+<td>{{result.statistics.viewCount}}</td>
 <td>{{result.snippet.publishedAt}}</td>
-<td>{{result.snippet.resourceId.videoId}}</td>
 </tr>
 </tbody>
 </table>

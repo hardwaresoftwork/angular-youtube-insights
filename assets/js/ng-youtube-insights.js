@@ -22,7 +22,8 @@
     return({
             getChannelStats         : getChannelStats,
             getChannelPlaylists     : getChannelPlaylists,
-            getPlaylistItems        : getPlaylistItems
+            getPlaylistItems        : getPlaylistItems,
+            getVideoDetails         : getVideoDetails
     });
 
 function getChannelStats(channelname) {
@@ -55,6 +56,18 @@ function getPlaylistItems(playlistid) {
     method: "get",
     cache: true,
     url: baseUrl + 'playlistItems?part=snippet&maxResults=50&playlistId=' + playlistid + apikey
+  });
+
+  return( request.then( handleSuccess, handleError ) );
+
+}
+
+function getVideoDetails(videoid) {
+
+  var request = $http({
+    method: "get",
+    cache: true,
+    url: baseUrl + 'videos?part=snippet,statistics,contentDetails&id=' + videoid + apikey
   });
 
   return( request.then( handleSuccess, handleError ) );

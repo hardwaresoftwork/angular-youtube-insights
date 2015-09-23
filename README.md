@@ -7,7 +7,10 @@ AngularJS 1.x service for Google Youtube API
 
 ##### Service Methods #####
 
-* getYoutubeChannelStats
+*  getChannelStats
+*  getChannelPlaylists
+*  getPlaylistItems
+*  getVideoDetails
 
 #### Example ####
 
@@ -15,10 +18,10 @@ Just add the service as dependency to your controller and make a call.
 You need to obtain an API-key before.
 
 ```javascript
-ngYTInsights.getYoutubeChannelStats('androidpit')
+ngYTInsights.getChannelStats('YOUR_CHANNELNAME')
 .then(
   function( response ) {
-    $scope.uservalue = response;
+    $scope.channeldata = response;
   }
 );
 ```
