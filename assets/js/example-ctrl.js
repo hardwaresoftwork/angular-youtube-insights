@@ -165,23 +165,31 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
 
   $scope.project = { title: project.title };
   $scope.channelid = $routeParams.playlistid;
-//$scope.results = [];
 
   ngYTInsights.getPlaylistItems($scope.channelid)
     .then(
       function( response ) {
         console.log(response);
         $scope.results = response;
-
-      /*  $scope.results.push({
-          ytinsights : $scope.temp
-        });*/
       }
     );
 
-
 }]);
 
+Controllers.controller('VideoCtrl', ['$scope', '$routeParams', 'ngYTInsights', '$location', 'project',
+function($scope, $routeParams, ngYTInsights, $location, project) {
+
+  $scope.project = { title: project.title };
+
+  ngYTInsights.getVideoDetails($routeParams.videoid)
+    .then(
+      function( response ) {
+        console.log(response);
+        $scope.results = response;
+      }
+    );
+
+}]);
 
 
 })();

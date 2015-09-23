@@ -27,6 +27,10 @@ function($routeProvider) {
     templateUrl: 'ng-views/playlistitems.html',
     controller: 'PlaylistsItemsCtrl'
   }).
+  when('/video/:videoid', {
+    templateUrl: 'ng-views/video.html',
+    controller: 'VideoCtrl'
+  }).
   otherwise({
     redirectTo: '/home'
   });
