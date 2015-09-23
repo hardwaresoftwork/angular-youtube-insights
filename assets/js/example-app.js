@@ -19,6 +19,14 @@ function($routeProvider) {
     templateUrl: 'ng-views/youtube.html',
     controller: 'YoutubeExternalCtrl'
   }).
+  when('/playlists/:playlistid', {
+    templateUrl: 'ng-views/playlists.html',
+    controller: 'PlaylistsCtrl'
+  }).
+  when('/playlistsItems/:playlistid', {
+    templateUrl: 'ng-views/playlistitems.html',
+    controller: 'PlaylistsItemsCtrl'
+  }).
   otherwise({
     redirectTo: '/home'
   });
