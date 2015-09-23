@@ -93,13 +93,6 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
 
   $scope.results = [];
 
-  /*
-  AndroidSPIN
-  AndroidCentral
-  AndroidAuthority
-  androidtapp
-  */
-
   $scope.sites = [{
     channel: 'baixakiAndroid',
     sitedata: {}
@@ -142,18 +135,12 @@ Controllers.controller('PlaylistsCtrl', ['$scope', '$routeParams', 'ngYTInsights
 function($scope, $routeParams, ngYTInsights, $location, project) {
 
   $scope.project = { title: project.title };
-  $scope.channelid = $routeParams.playlistid;
-//$scope.results = [];
 
-  ngYTInsights.getChannelPlaylists($scope.channelid)
+  ngYTInsights.getChannelPlaylists($routeParams.playlistid)
     .then(
       function( response ) {
-        console.log(response);
         $scope.results = response;
 
-      /*  $scope.results.push({
-          ytinsights : $scope.temp
-        });*/
       }
     );
 
@@ -164,12 +151,10 @@ Controllers.controller('PlaylistsItemsCtrl', ['$scope', '$routeParams', 'ngYTIns
 function($scope, $routeParams, ngYTInsights, $location, project) {
 
   $scope.project = { title: project.title };
-  $scope.channelid = $routeParams.playlistid;
 
-  ngYTInsights.getPlaylistItems($scope.channelid)
+  ngYTInsights.getPlaylistItems($routeParams.playlistid)
     .then(
       function( response ) {
-        console.log(response);
         $scope.results = response;
       }
     );
@@ -184,7 +169,6 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
   ngYTInsights.getVideoDetails($routeParams.videoid)
     .then(
       function( response ) {
-        console.log(response);
         $scope.results = response;
       }
     );
