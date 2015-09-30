@@ -67,7 +67,9 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
     channel: 'androidpitfr',
     country: 'fr',
     sitedata: {}
-  }];
+  }
+];
+
 
   var sitelength = $scope.sites.length;
 
@@ -111,6 +113,40 @@ function($scope, $routeParams, ngYTInsights, $location, project) {
   },{
     channel: 'androidtapp',
     sitedata: {}
+  }];
+
+  var sitelength = $scope.sites.length;
+
+  for (var i = 0; i < sitelength; i++) {
+    ngYTInsights.getChannelStats($scope.sites[i].channel)
+    .then(
+      function( response ) {
+        $scope.temp = response;
+        $scope.results.push({
+          ytinsights : $scope.temp
+        });
+      }
+    );
+  }
+
+
+}]);
+
+Controllers.controller('RapCtrl', ['$scope', '$routeParams', 'ngYTInsights', '$location', 'project',
+function($scope, $routeParams, ngYTInsights, $location, project) {
+
+  $scope.project = { title: project.title };
+
+  $scope.results = [];
+
+  $scope.sites = [{
+    channel: 'bushido'
+  },{
+    channel: 'FlerTV2010'
+  },{
+    channel: 'www16barsde'
+  },{
+    channel: 'wwwHiphopDe'
   }];
 
   var sitelength = $scope.sites.length;

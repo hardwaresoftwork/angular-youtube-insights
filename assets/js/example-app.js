@@ -19,6 +19,10 @@ function($routeProvider) {
     templateUrl: 'ng-views/youtube.html',
     controller: 'YoutubeExternalCtrl'
   }).
+  when('/rap', {
+    templateUrl: 'ng-views/youtube.html',
+    controller: 'RapCtrl'
+  }).
   when('/playlists/:playlistid', {
     templateUrl: 'ng-views/playlists.html',
     controller: 'PlaylistsCtrl'
