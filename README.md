@@ -1,4 +1,4 @@
-# angular-pagespeed-insights
+# angular-youtube-insights
 AngularJS 1.x service for Google Youtube API
 
 #### Youtube API Docs ####
