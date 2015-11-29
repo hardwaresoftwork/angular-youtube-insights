@@ -1,0 +1,33 @@
+<div>
+  <h1 class="page-header">{{project.title}}</h1>
+<ol class="breadcrumb">
+  <li><a ng-href="#/youtube">Internal</a></li>
+  <li><a ng-href="#/youtubecompetitors">Competitors</a></li>
+</ol>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+<tr>
+<th>THUMB</th>
+<th>TITLE</th>
+<th>LIKES / DISLIKES</th>
+<th>FAVS</th>
+<th>COMMENTS</th>
+<th>VIEWS</th>
+<th>PUBLISHED AT</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="result in results.items">
+<td><img src="{{result.snippet.thumbnails.default.url}}" \></td>
+<td>{{result.snippet.title}}</td>
+<td>{{result.statistics.likeCount}} / {{result.statistics.dislikeCount}}</td>
+<td>{{result.statistics.favoriteCount}}</td>
+<td>{{result.statistics.commentCount}}</td>
+<td>{{result.statistics.viewCount}}</td>
+<td>{{result.snippet.publishedAt}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

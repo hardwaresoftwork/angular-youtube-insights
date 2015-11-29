@@ -28,4 +28,4 @@ ngYTInsights.getChannelStats('YOUR_CHANNELNAME')
 
 #### Demo ####
 
-* http://hello.bnz-power.com/angular-youtube-insights
+* http://hello.bnz-power.com/angular-youtube-insights/docs/examples
